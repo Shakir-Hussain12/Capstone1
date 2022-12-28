@@ -1,0 +1,160 @@
+@font-face {
+    font-family: "headerFont";
+    src: url("../fonts/Lato2OFL/Lato-Heavy.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "textFont";
+    src: url("../fonts/Lato2OFL/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: "capFont";
+    src: url("../fonts/Lato2OFL/Lato-Bold.ttf");
+}
+
+$font-main: "headerFont", sans-serif;
+$font-add: "textFont", sans-serif;
+$font-cap: "capFont", sans-serif;
+
+body {
+    box-sizing: border-box;
+
+    h2 {
+        margin-bottom: 2px;
+    }
+
+    ul {
+        list-style: none;
+    }
+    
+    hr.red {
+        max-width: 8%;
+        margin-top: 0;
+        border-top: 2px solid red;
+    }
+
+    hr.inside {
+        max-width: 50%;
+        border-top: 2px solid;
+    }
+}
+
+.top {
+    display: none;
+}
+
+nav {
+    .container-fluid {
+        padding: 0 7%;
+    }
+}
+
+.content {
+    padding-top: 50vh;
+    background: url("../images/top_back.png") center no-repeat;
+    background-size: cover;
+
+    > * {
+        margin-inline-start: 10%;
+    }
+
+    > p {
+        font-family: $font-cap;
+        font-size: 2rem;
+        font-style: oblique;
+    }
+
+    h1 {
+        font-family: $font-main;
+        background: linear-gradient(to right, orangered, white, orangered);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: italic;
+        font-size: 4rem;
+    }
+
+    .card {
+        background: transparent;
+        max-width: 70%;
+        box-shadow: 1px 1px 1px 1px;
+        font-family: $font-add;
+        @media (min-width: 1000px) {
+            max-width: 45%;
+        }
+    }
+}
+
+#performers {
+    max-width: 80%;
+    margin: 0 auto;
+    .item {
+        word-wrap: break-word;
+        // word-break:break-all;
+        // white-space: pre-line;
+    }
+
+    .title {
+        font-family: $font-add;
+    }
+}
+
+#partners {
+    ul {
+        font-family: $font-main;
+        font-size: 2rem;
+        color: gray;
+    }
+}
+
+#programs {
+    h2 {
+        font-family: $font-cap;
+    }
+}
+
+footer {
+    div {
+        max-width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        li {
+            font-family: $font-cap;
+            p {
+                font-family: $font-add;
+                color: gray;
+            }
+        }
+    }
+}
+
+// effects
+// .navbar-expand-md .navbar-nav .nav-link {
+
+// }
+
+@media (min-width: 768px) {
+    .top {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        padding-bottom: 1px;
+        padding-inline-end: 12%;
+        height: 5vh;
+        background-color: gray;
+        ul {
+            display: flex;
+            justify-content: end;
+            min-width: 70%;
+            gap: 3%;
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}

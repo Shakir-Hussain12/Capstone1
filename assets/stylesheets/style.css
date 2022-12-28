@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "headerFont";
+  src: url("../fonts/Lato2OFL/Lato-Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "textFont";
+  src: url("../fonts/Lato2OFL/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "capFont";
+  src: url("../fonts/Lato2OFL/Lato-Bold.ttf");
+}
+body {
+  box-sizing: border-box;
+}
+body h2 {
+  margin-bottom: 2px;
+}
+body ul {
+  list-style: none;
+}
+body hr.red {
+  max-width: 8%;
+  margin-top: 0;
+  border-top: 2px solid red;
+}
+body hr.inside {
+  max-width: 50%;
+  border-top: 2px solid;
+}
+
+.top {
+  display: none;
+}
+
+nav .container-fluid {
+  padding: 0 7%;
+}
+
+.content {
+  padding-top: 50vh;
+  background: url("../images/top_back.png") center no-repeat;
+  background-size: cover;
+}
+.content > * {
+  -webkit-margin-start: 10%;
+          margin-inline-start: 10%;
+}
+.content > p {
+  font-family: "capFont", sans-serif;
+  font-size: 2rem;
+  font-style: oblique;
+}
+.content h1 {
+  font-family: "headerFont", sans-serif;
+  background: linear-gradient(to right, orangered, white, orangered);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-size: 4rem;
+}
+.content .card {
+  background: transparent;
+  max-width: 70%;
+  box-shadow: 1px 1px 1px 1px;
+  font-family: "textFont", sans-serif;
+}
+@media (min-width: 1000px) {
+  .content .card {
+    max-width: 45%;
+  }
+}
+
+#performers {
+  max-width: 80%;
+  margin: 0 auto;
+}
+#performers .item {
+  word-wrap: break-word;
+}
+#performers .title {
+  font-family: "textFont", sans-serif;
+}
+
+#partners ul {
+  font-family: "headerFont", sans-serif;
+  font-size: 2rem;
+  color: gray;
+}
+
+#programs h2 {
+  font-family: "capFont", sans-serif;
+}
+
+footer div {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+footer div li {
+  font-family: "capFont", sans-serif;
+}
+footer div li p {
+  font-family: "textFont", sans-serif;
+  color: gray;
+}
+
+@media (min-width: 768px) {
+  .top {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding-bottom: 1px;
+    -webkit-padding-end: 12%;
+            padding-inline-end: 12%;
+    height: 5vh;
+    background-color: gray;
+  }
+  .top ul {
+    display: flex;
+    justify-content: end;
+    min-width: 70%;
+    gap: 3%;
+    list-style: none;
+  }
+  .top ul a {
+    text-decoration: none;
+    color: black;
+  }
+}/*# sourceMappingURL=style.css.map */
