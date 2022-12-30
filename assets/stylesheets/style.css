@@ -10,6 +10,10 @@
   font-family: "capFont";
   src: url("../fonts/Lato2OFL/Lato-Bold.ttf");
 }
+:root {
+  --image: url("../images/top_back.png");
+}
+
 body {
   box-sizing: border-box;
 }
@@ -21,11 +25,15 @@ body ul {
 }
 body hr.red {
   max-width: 8%;
-  margin-top: 0;
+  margin: 0 auto;
+  margin-bottom: 2%;
   border-top: 2px solid red;
 }
+body .right > * {
+  margin: 2% 0;
+}
 body hr.inside {
-  max-width: 50%;
+  max-width: 40%;
   border-top: 2px solid;
 }
 
@@ -53,12 +61,14 @@ nav .container-fluid {
 }
 .content h1 {
   font-family: "headerFont", sans-serif;
-  background: linear-gradient(to right, orangered, white, orangered);
+  word-wrap: break-word;
+  background: url("../images/orange-shiny-background-14529795.jpg");
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-position: left;
   font-style: italic;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 .content .card {
   background: transparent;
@@ -70,6 +80,23 @@ nav .container-fluid {
   .content .card {
     max-width: 45%;
   }
+}
+
+#programs .border {
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 575px) {
+  #programs .border {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+#programs h2 {
+  font-family: "capFont", sans-serif;
 }
 
 #performers {
@@ -84,13 +111,11 @@ nav .container-fluid {
 }
 
 #partners ul {
+  display: flex;
+  flex-wrap: wrap;
   font-family: "headerFont", sans-serif;
   font-size: 2rem;
   color: gray;
-}
-
-#programs h2 {
-  font-family: "capFont", sans-serif;
 }
 
 footer div {
@@ -106,6 +131,25 @@ footer div li {
 footer div li p {
   font-family: "textFont", sans-serif;
   color: gray;
+}
+@media (max-width: 500px) {
+  footer div {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  footer div ul {
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+  }
+}
+
+.active .navbar-toggler-icon {
+  background-image: url("../images/top_back.png");
+  background-size: contain;
+}
+
+.show {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
