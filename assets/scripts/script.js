@@ -2,32 +2,32 @@ let parent = document.querySelector('#performers');
 
 const programs = [
   {
-    icon: '',
+    icon: './assets/images/prog1.jpg',
     head: 'Rehearsals',
     info: 'Lorem Ipsum',
   },
   {
-    icon: '',
-    head: 'Live Performance',
+    icon: './assets/images/prog2.jpeg',
+    head: 'Opera',
     info: 'Lorem Ipsum',
   },
   {
-    icon: '',
-    head: 'Lunch Break',
+    icon: './assets/images/prog4.jpg',
+    head: 'Jazz',
     info: 'Lorem Ipsum',
   },
   {
-    icon: '',
-    head: 'Meet n Greet',
+    icon: './assets/images/prog3.jpg',
+    head: 'Pop',
     info: 'Lorem Ipsum',
   },
   {
-    icon: '',
+    icon: './assets/images/forum.jpg',
     head: 'Forum',
     info: 'Lorem Ipsum',
   },
   {
-    icon: '',
+    icon: './assets/images/prog5.jpeg',
     head: 'Community',
     info: 'Lorem Ipsum',
   },
@@ -36,39 +36,45 @@ const programs = [
 const performers = [
   {
     name: 'Eminem',
-    pic: './assets/images/notfound.png',
-    achievements: '3 times grammy winner',
-    info: 'Lorem Ipsum',
+    pic: './assets/images/eminem.jpg',
+    achievements: 'Rapper / Multi-Grammy Winner / Producer',
+    info: 'Eminem is an American rapper and record producer. He is credited with popularizing hip hop in middle America and is critically acclaimed as one of the greatest rappers of all time.',
+    link: 'https://en.wikipedia.org/wiki/Eminem',
   },
   {
     name: 'Dimash',
-    pic: './assets/images/notfound.png',
-    achievements: 'Best Vocalist in the world',
-    info: 'Lorem Ipsum',
+    pic: './assets/images/dimash.jpg',
+    achievements: 'Multi-genre Singer / Composer / Multi-Instrumentalist',
+    info: 'Dimash Qudaibergen is a Kazakh singer, songwriter, and multi-instrumentalist. He is university-trained in classical as well as contemporary music, and is known for his exceptionally wide vocal range.',
+    link: 'https://en.wikipedia.org/wiki/Dimash_Kudaibergen',
   },
   {
     name: 'BTS',
-    pic: './assets/images/notfound.png',
-    achievements: 'Biggest K-Pop Group',
-    info: 'Lorem Ipsum',
+    pic: './assets/images/BTS.jpg',
+    achievements: 'K-Pop Group / Singers/ Dancers',
+    info: 'South Korean boy band formed in 2010. The band consists of Jin, Suga, J-Hope, RM, Jimin, V, and Jungkook, who co-write and co-produce the majority of their material.',
+    link: 'https://en.wikipedia.org/wiki/BTS',
   },
   {
     name: 'Andrea Bocelli',
-    pic: './assets/images/notfound.png',
-    achievements: '',
-    info: 'Lorem Ipsum',
+    pic: './assets/images/Andrea.jpg',
+    achievements: 'Singer / Composer / Multi-Grammy Winner',
+    info: 'Italian tenor and multi-instrumentalist. Born visually impaired, with congenital glaucoma, and at the age of 12, Bocelli became completely blind, following a brain hemorrhage resulting from a football accident.',
+    link: 'https://en.wikipedia.org/wiki/Andrea_Bocelli',
   },
   {
-    name: 'Tupac',
-    pic: './assets/images/notfound.png',
-    achievements: 'Most influential Rapper',
-    info: 'Lorem Ipsum',
+    name: 'Beyonce',
+    pic: './assets/images/beyonce.webp',
+    achievements: 'Singer / Songwriter / Actress',
+    info: "Beyoncé's boundary-pushing artistry and vocals have made her the most influential female musician of the 21st century, according to NPR. Her success has led to her becoming a cultural icon and earning her the nickname 'Queen Bey'.",
+    link: 'https://en.wikipedia.org/wiki/Beyonc%C3%A9',
   },
   {
     name: 'Drake',
-    pic: './assets/images/notfound.png',
-    achievements: 'Most popular rapper in the world',
-    info: 'Lorem Ipsum',
+    pic: './assets/images/drake.webp',
+    achievements: 'Rapper/ Singer / Songwriter / Actor ',
+    info: 'An influential figure in contemporary popular music, Drake has been credited for popularizing singing and R&B sensibilities in hip hop',
+    link: 'https://en.wikipedia.org/wiki/Drake_(musician)',
   },
 ];
 
@@ -96,33 +102,44 @@ performers.map((singer) => {
     pic,
     achievements,
     info,
+    link,
   } = singer;
-  let dcol = drow.appendChild(createElem('div', 'col-md-6'));
-  dcol.classList.add('d-flex');
-  dcol.classList.add('p-5');
-  const left = dcol.appendChild(createElem('div', 'left'));
-  left.classList.add('w-50');
-  let img = left.appendChild(createElem('img', 'img-fluid'));
+  const dcol = drow.appendChild(createElem('div', 'col-md-6'));
+  dcol.classList.add('p-3');
+  const inDiv = dcol.appendChild(createElem('div', 'card'));
+  inDiv.classList.add('mb-3');
+  inDiv.classList.add('perf_item');
+  const cd = inDiv.appendChild(createElem('div','row'));
+  cd.classList.add('g-0');
+  const left = cd.appendChild(createElem('div', 'col-sm-4'));
+  left.classList.add('p-3');
+  const img = left.appendChild(createElem('img', 'img-fluid'));
+  img.classList.add('rounded-start');
   img.src = pic;
-  const right = dcol.appendChild(createElem('div', 'right'));
-  right.classList.add('flex-column');
+  img.alt = name;
+  const right = cd.appendChild(createElem('div', 'col-sm-8'));
   right.classList.add('item');
-  let h4 = right.appendChild(createElem('h4', 'title'));
+  const cBody = right.appendChild(createElem('div', 'card-body'));
+  const h4 = cBody.appendChild(createElem('h3', 'card-title'));
   h4.innerText = name;
-  let p = right.appendChild(createElem('p', 'd-block'));
+  let p = cBody.appendChild(createElem('p', 'card-text'));
   p.classList.add('text-danger');
   p.innerText = achievements;
-  right.appendChild(createElem('hr', 'inside'));
-  p = right.appendChild(createElem('p'));
+  cBody.appendChild(createElem('hr', 'inside'));
+  p = cBody.appendChild(createElem('p','card-text'));
   p.innerText = info;
+  const anchor = cBody.appendChild(createElem('a'));
+  anchor.href = link;
+  anchor.innerText = 'Wikipedia Link';
 });
 
 // adding programs dynamically
 parent = document.querySelector('#programs');
 con = parent.appendChild(createElem('div', 'container'));
-con.classList.add('py-5');
+con.classList.add('pb-5');
+con.classList.add('pt-3');
 h2 = con.appendChild(createElem('h2', 'text-center'));
-h2.innerText = 'Main Program';
+h2.innerText = 'Programs & Events';
 con.appendChild(createElem('hr', 'red'));
 drow = con.appendChild(createElem('div', 'row'));
 drow.classList.add('gx-2');
@@ -133,13 +150,17 @@ programs.map((program) => {
     head,
     info,
   } = program;
-  let dcol = drow.appendChild(createElem('div', 'col-md-2'));
+  const dcol = drow.appendChild(createElem('div', 'col-md-2'));
   dcol.classList.add('col-sm-4');
-  let ins = dcol.appendChild(createElem('div', 'border'));
-  ins.innerHTML = icon;
-  let h3 = ins.appendChild(createElem('h5'));
+  const ins = dcol.appendChild(createElem('div', 'border'));
+  const img = ins.appendChild(createElem('img', 'img-fluid'));
+  img.src = icon;
+  img.alt = 'N/A';
+  const right = ins.appendChild(createElem('div', 'd-flex'));
+  right.classList.add('flex-column');
+  const h3 = right.appendChild(createElem('h3'));
   h3.innerText = head;
-  p = ins.appendChild(createElem('p'));
+  const p = right.appendChild(createElem('p'));
   p.innerText = info;
 });
 

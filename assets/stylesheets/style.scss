@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "textFont";
-    src: url("../fonts/Lato2OFL/Lato-Regular.ttf");
+    src: url("../fonts/Lato2OFL/Lato-Semibold.ttf");
 }
 
 @font-face {
@@ -14,12 +14,15 @@
 }
 
 :root {
-    --image : url('../images/top_back.png');
+    --image: url("../images/top_back.png");
 }
 
-$font-main: "headerFont", sans-serif;
-$font-add: "textFont", sans-serif;
-$font-cap: "capFont", sans-serif;
+$font-main: "headerFont",
+sans-serif;
+$font-add: "textFont",
+sans-serif;
+$font-cap: "capFont",
+sans-serif;
 
 body {
     box-sizing: border-box;
@@ -31,7 +34,7 @@ body {
     ul {
         list-style: none;
     }
-    
+
     hr.red {
         max-width: 8%;
         margin: 0 auto;
@@ -39,7 +42,7 @@ body {
         border-top: 2px solid red;
     }
 
-    .right > * {
+    .right>* {
         margin: 2% 0;
     }
 
@@ -61,35 +64,45 @@ nav {
 
 .content {
     padding-top: 50vh;
-    background: url("../images/top_back.png") center no-repeat;
-    background-size: cover;
+    background: url("../images/back.jpg") center no-repeat;
+    background-size: contain;
 
-    > * {
+    @media (max-width: 1100px) {
+        background-size: cover;
+    }
+
+    >* {
         margin-inline-start: 10%;
     }
 
-    > p {
+    >p {
         font-family: $font-cap;
         font-size: 2rem;
         font-style: oblique;
+        color: white;
+        -webkit-text-stroke: 1px black;
     }
 
     h1 {
         font-family: $font-main;
         word-wrap: break-word;
-        background: url("../images/orange-shiny-background-14529795.jpg");
+        background: url("../images/text_back1.jpg");
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-position: left;
+        background-position: top;
         font-style: italic;
         font-size: 3.5rem;
+        -webkit-text-stroke: 0.5px black;
     }
 
     .card {
         background: transparent;
         max-width: 70%;
         box-shadow: 1px 1px 1px 1px;
+        color: white;
+        text-shadow: -1px 1px 0 black, -1px -1px 0 black;
         font-family: $font-add;
+
         @media (min-width: 1000px) {
             max-width: 45%;
         }
@@ -97,16 +110,47 @@ nav {
 }
 
 #programs {
+    background: url("../images/back2.jpg");
+    background-size: cover;
+    background-position: left;
+    padding: 2%;
+    max-width: 80%;
+    margin: 0 auto;
+
+    @media (max-width: 1100px) {
+        max-width: 90%;
+    }
+
+    h2 {
+        color: black;
+        -webkit-text-stroke: 1px white;
+    }
+
     .border {
+        background: white;
         word-wrap: break-word;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: 2px 2px 2px yellowgreen;
+        border-radius: 5px;
+
+        .img-fluid {
+            padding: 2%;
+        }
+
+        h3 {
+            font-family: $font-add;
+            font-size: 1.5rem;
+        }
 
         @media (max-width: 575px) {
             flex-direction: row;
             align-items: flex-start;
-            justify-content: space-between;
+
+            .img-fluid {
+                max-width: 50%;
+            }
         }
     }
 
@@ -116,48 +160,79 @@ nav {
 }
 
 #performers {
+    background: url("../images/back1.jpg");
     max-width: 80%;
     margin: 0 auto;
+
+    h2 {
+        color: black;
+        -webkit-text-stroke: 1px white;
+    }
+
+    @media (max-width: 1100px) {
+        max-width: 90%;
+    }
+
+    .perf_item {
+        border: 1px solid white;
+        box-shadow: 5px 5px 5px 5px black;
+        background: white;
+        color: black;
+        border-radius: 3px;
+    }
+
     .item {
         word-wrap: break-word;
         // word-break:break-all;
         // white-space: pre-line;
     }
 
-    .title {
+    .card-title {
         font-family: $font-add;
     }
 }
 
-#partners {
+#sponsors {
+    background: linear-gradient(to left, rgb(142, 224, 245), white);
+    font-family: $font-main;
+    padding: 2%;
+
+    h2 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+
     ul {
         display: flex;
         flex-wrap: wrap;
-        font-family: $font-main;
         font-size: 2rem;
         color: gray;
+        margin-bottom: 0;
     }
 }
 
 footer {
+    background: linear-gradient(to right, rgb(142, 224, 245), white);
+
     div {
-        max-width: 80%;
+        max-width: 90%;
         margin: 0 auto;
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;
+
         li {
             font-family: $font-cap;
+
             p {
                 font-family: $font-add;
-                color: gray;
             }
         }
 
         @media (max-width: 500px) {
             flex-wrap: wrap;
             justify-content: flex-start;
-            
+
             ul {
                 padding-inline-start: 0;
             }
@@ -167,7 +242,7 @@ footer {
 
 //js effects
 .active .navbar-toggler-icon {
-    background-image: url('../images/top_back.png');
+    background-image: url("../images/Enabled-close.png");
     background-size: contain;
 }
 
@@ -184,12 +259,14 @@ footer {
         padding-inline-end: 12%;
         height: 5vh;
         background-color: gray;
+
         ul {
             display: flex;
             justify-content: end;
             min-width: 70%;
             gap: 3%;
             list-style: none;
+
             a {
                 text-decoration: none;
                 color: black;
