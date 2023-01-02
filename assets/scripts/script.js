@@ -4,32 +4,32 @@ const programs = [
   {
     icon: './assets/images/prog1.jpg',
     head: 'Rehearsals',
-    info: 'Lorem Ipsum',
+    info: 'Get a chance to see the hardwork behind each masterpiece with access to live rehearsals of each band/ performer.',
   },
   {
     icon: './assets/images/prog2.jpeg',
     head: 'Opera',
-    info: 'Lorem Ipsum',
+    info: 'Get in touch with the purest form of music with the best opera singers from all around the world.',
   },
   {
     icon: './assets/images/prog4.jpg',
     head: 'Jazz',
-    info: 'Lorem Ipsum',
+    info: 'Get a chance to witness your favorite/ best Jazz groups perform live.',
   },
   {
     icon: './assets/images/prog3.jpg',
     head: 'Pop',
-    info: 'Lorem Ipsum',
+    info: "Enjoy back-to-back performances from the world's top Pop artists.",
   },
   {
     icon: './assets/images/forum.jpg',
     head: 'Forum',
-    info: 'Lorem Ipsum',
+    info: 'Get in touch with other music lovers, and share your experiences.',
   },
   {
     icon: './assets/images/prog5.jpeg',
     head: 'Community',
-    info: 'Lorem Ipsum',
+    info: 'Join the Upsouly community for latest updates on concerts all over the world.',
   },
 ];
 
@@ -109,7 +109,7 @@ performers.map((singer) => {
   const inDiv = dcol.appendChild(createElem('div', 'card'));
   inDiv.classList.add('mb-3');
   inDiv.classList.add('perf_item');
-  const cd = inDiv.appendChild(createElem('div','row'));
+  const cd = inDiv.appendChild(createElem('div', 'row'));
   cd.classList.add('g-0');
   const left = cd.appendChild(createElem('div', 'col-sm-4'));
   left.classList.add('p-3');
@@ -126,7 +126,7 @@ performers.map((singer) => {
   p.classList.add('text-danger');
   p.innerText = achievements;
   cBody.appendChild(createElem('hr', 'inside'));
-  p = cBody.appendChild(createElem('p','card-text'));
+  p = cBody.appendChild(createElem('p', 'card-text'));
   p.innerText = info;
   const anchor = cBody.appendChild(createElem('a'));
   anchor.href = link;
@@ -150,7 +150,8 @@ programs.map((program) => {
     head,
     info,
   } = program;
-  const dcol = drow.appendChild(createElem('div', 'col-md-2'));
+  const dcol = drow.appendChild(createElem('div', 'col-lg-2'));
+  dcol.classList.add('col-md-3')
   dcol.classList.add('col-sm-4');
   const ins = dcol.appendChild(createElem('div', 'border'));
   const img = ins.appendChild(createElem('img', 'img-fluid'));
@@ -160,12 +161,13 @@ programs.map((program) => {
   right.classList.add('flex-column');
   const h3 = right.appendChild(createElem('h3'));
   h3.innerText = head;
+  right.appendChild(createElem('hr','w-75'));
   const p = right.appendChild(createElem('p'));
   p.innerText = info;
 });
 
 const btn = document.querySelector('.navbar-toggler');
-const li = document.querySelectorAll('.navbar-nav a')
+const li = document.querySelectorAll('.navbar-nav a');
 const menu = document.querySelector('.navbar-collapse');
 
 btn.addEventListener('click', () => {
@@ -177,4 +179,4 @@ li.forEach((link) => {
     menu.classList.remove('show');
     btn.classList.remove('active');
   });
-})
+});

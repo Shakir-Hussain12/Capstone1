@@ -26,6 +26,7 @@ sans-serif;
 
 body {
     box-sizing: border-box;
+    background: linear-gradient(to bottom, black, white, black);
 
     h2 {
         margin-bottom: 2px;
@@ -57,19 +58,23 @@ body {
 }
 
 nav {
+    background: linear-gradient(to right, lightyellow, white);
+
     .container-fluid {
         padding: 0 7%;
+    }
+
+    .nav-link:hover {
+        color: black;
+        border: 2px solid orangered;
+        border-radius: 5px;
     }
 }
 
 .content {
-    padding-top: 50vh;
     background: url("../images/back.jpg") center no-repeat;
-    background-size: contain;
-
-    @media (max-width: 1100px) {
-        background-size: cover;
-    }
+    background-size: cover;
+    padding: auto 5%;
 
     >* {
         margin-inline-start: 10%;
@@ -80,6 +85,7 @@ nav {
         font-size: 2rem;
         font-style: oblique;
         color: white;
+        max-width: 50%;
         -webkit-text-stroke: 1px black;
     }
 
@@ -92,7 +98,8 @@ nav {
         background-position: top;
         font-style: italic;
         font-size: 3.5rem;
-        -webkit-text-stroke: 0.5px black;
+        max-width: 70%;
+        -webkit-text-stroke: 1px black;
     }
 
     .card {
@@ -107,6 +114,64 @@ nav {
             max-width: 45%;
         }
     }
+
+    @media (max-width: 769px) {
+        >p {
+            font-size: 1.85rem;
+            padding-top: 0;
+            max-width: 75%;
+        }
+
+        h1 {
+            font-size: 2.85rem;
+            max-width: 75%;
+        }
+
+        .card {
+            max-width: 75%;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 550px) {
+        >p {
+            font-size: 1.7rem;
+            max-width: 80%;
+            padding-top: 0;
+        }
+
+        h1 {
+            font-size: 2.7rem;
+            max-width: 80%;
+        }
+
+        .card {
+            max-width: 80%;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 520px) {
+        >* {
+            margin-inline-start: 2%;
+        }
+
+        >p {
+            font-size: 1.3rem;
+            max-width: 95%;
+            padding-top: 0;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            max-width: 95%;
+        }
+
+        .card {
+            max-width: 95%;
+            font-size: 0.8rem;
+        }
+    }
 }
 
 #programs {
@@ -114,11 +179,17 @@ nav {
     background-size: cover;
     background-position: left;
     padding: 2%;
-    max-width: 80%;
+    max-width: 95%;
     margin: 0 auto;
+    word-wrap: break-word;
 
-    @media (max-width: 1100px) {
-        max-width: 90%;
+    .container>div {
+        word-wrap: break-word;
+        font-family: $font-add;
+
+        hr {
+            margin: 2% 0;
+        }
     }
 
     h2 {
@@ -128,15 +199,21 @@ nav {
 
     .border {
         background: white;
-        word-wrap: break-word;
         display: flex;
         flex-direction: column;
         align-items: center;
         box-shadow: 2px 2px 2px yellowgreen;
-        border-radius: 5px;
+        border-radius: 10px;
+        padding: 5%;
+        min-height: 350px;
+
+        @media (max-width: 575px) {
+            min-height: auto;
+        }
 
         .img-fluid {
             padding: 2%;
+            border-radius: 5px;
         }
 
         h3 {
@@ -160,8 +237,9 @@ nav {
 }
 
 #performers {
-    background: url("../images/back1.jpg");
-    max-width: 80%;
+    background: url("../images/back1.jpg") center;
+    background-size: cover;
+    max-width: 95%;
     margin: 0 auto;
 
     h2 {
@@ -169,22 +247,16 @@ nav {
         -webkit-text-stroke: 1px white;
     }
 
-    @media (max-width: 1100px) {
-        max-width: 90%;
-    }
-
     .perf_item {
         border: 1px solid white;
         box-shadow: 5px 5px 5px 5px black;
         background: white;
         color: black;
-        border-radius: 3px;
+        border-radius: 10px;
     }
 
     .item {
         word-wrap: break-word;
-        // word-break:break-all;
-        // white-space: pre-line;
     }
 
     .card-title {
@@ -198,16 +270,23 @@ nav {
     padding: 2%;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         text-transform: uppercase;
     }
 
     ul {
         display: flex;
         flex-wrap: wrap;
-        font-size: 2rem;
-        color: gray;
         margin-bottom: 0;
+
+        .thumbnail {
+            height: 100px;
+            width: 100px;
+
+            .img-fluid {
+                border-radius: 10%;
+            }
+        }
     }
 }
 
@@ -224,8 +303,13 @@ footer {
         li {
             font-family: $font-cap;
 
+            h2 {
+                font-size: 1.5rem;
+            }
+
             p {
                 font-family: $font-add;
+                color: gray;
             }
         }
 
@@ -258,7 +342,7 @@ footer {
         padding-bottom: 1px;
         padding-inline-end: 12%;
         height: 5vh;
-        background-color: gray;
+        background: linear-gradient(to right, black, gray);
 
         ul {
             display: flex;
