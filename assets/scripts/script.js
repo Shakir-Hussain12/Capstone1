@@ -107,7 +107,7 @@ const desktop = () => {
   drow.classList.add('gx-3');
   drow.classList.add('pt-1');
   drow.classList.add('pb-5');
-  performers.map((singer) => {
+  performers.forEach((singer) => {
     const {
       name,
       pic,
@@ -257,7 +257,7 @@ con.appendChild(createElem('hr', 'red'));
 const drow = con.appendChild(createElem('div', 'row'));
 drow.classList.add('justify-content-center');
 drow.classList.add('g-2');
-programs.map((program) => {
+programs.forEach((program) => {
   const {
     icon,
     head,
