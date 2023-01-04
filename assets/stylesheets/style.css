@@ -1,48 +1,62 @@
 @font-face {
   font-family: "headerFont";
-  src: url("../fonts/Lato2OFL/Lato-Heavy.ttf") format("truetype");
+  src: url("../fonts/Cocogoose/Cocogoose Pro Italic-trial.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "textFont";
   src: url("../fonts/Lato2OFL/Lato-Semibold.ttf");
 }
+
 @font-face {
   font-family: "capFont";
   src: url("../fonts/Lato2OFL/Lato-Bold.ttf");
 }
+
+@font-face {
+  font-family: "inHead";
+  src: url("../fonts/Lato2OFL/Lato-Black.ttf");
+}
+
 :root {
   --image: url("../images/top_back.png");
 }
 
 .light {
   background: white;
-  color: black;
+  color: #272a31;
 }
+
 .light .my-img {
   content: url("../images/top_logo.png");
 }
+
 @media (max-width: 768px) {
   .light {
-    background: black;
+    background: #272a31;
     color: white;
   }
+
   .light .my-img {
     content: url("../images/inside_logo.png");
   }
 }
 
 .dark {
-  background: rgb(43, 40, 40);
+  background: #272a31;
   color: white;
 }
+
 .dark .my-img {
   content: url("../images/inside_logo.png");
 }
+
 @media (max-width: 768px) {
   .dark {
     background: white;
-    color: black;
+    color: #272a31;
   }
+
   .dark .my-img {
     content: url("../images/top_logo.png");
   }
@@ -53,28 +67,38 @@ body {
   overflow-x: hidden;
   background: linear-gradient(to bottom, black, white, black);
 }
+
 body h2 {
   margin-bottom: 2px;
 }
+
 body ul {
   list-style: none;
 }
+
 body hr.red {
   max-width: 8%;
   margin: 0 auto;
   margin-bottom: 2%;
   border-top: 2px solid red;
 }
+
+.content > * {
+  margin-inline-start: 10%;
+}
+
 body .right > * {
   margin: 2% 0;
 }
+
 body hr.inside {
   max-width: 40%;
   border-top: 2px solid;
 }
+
 body #imp {
   text-align: center;
-  border: 3px solid orangered;
+  border: 3px solid #ec5242;
   border-radius: 5px;
   padding: 0;
 }
@@ -86,27 +110,33 @@ body #imp {
 nav {
   background: linear-gradient(to right, lightyellow, white);
 }
+
 nav .container-fluid {
   padding: 0 7%;
 }
+
 nav .navbar-nav {
   min-width: 75%;
   justify-content: space-between;
 }
+
 nav .nav-link:hover {
-  color: orangered;
+  color: #ec5242;
   border-radius: 5px;
 }
 
 .content {
   background: url("../images/back.jpg") center no-repeat;
   background-size: cover;
-  padding: auto 5%;
+  padding: 5%;
 }
-.content > * {
-  -webkit-margin-start: 10%;
-          margin-inline-start: 10%;
+
+footer div li p {
+  font-family: "capFont", sans-serif;
+  font-size: 0.8rem;
+  color: gray;
 }
+
 .content > p {
   font-family: "capFont", sans-serif;
   font-size: 2rem;
@@ -115,19 +145,19 @@ nav .nav-link:hover {
   max-width: 50%;
   -webkit-text-stroke: 1px black;
 }
+
 .content h1 {
   font-family: "headerFont", sans-serif;
   word-wrap: break-word;
   background: url("../images/text_back1.jpg");
   -webkit-background-clip: text;
-          background-clip: text;
   -webkit-text-fill-color: transparent;
   background-position: top;
-  font-style: italic;
   font-size: 3.5rem;
   max-width: 60%;
-  -webkit-text-stroke: 1px darkgrey;
+  -webkit-text-stroke: 1px black;
 }
+
 .content .card {
   background: transparent;
   max-width: 70%;
@@ -136,55 +166,65 @@ nav .nav-link:hover {
   text-shadow: -1px 1px 0 black, -1px -1px 0 black;
   font-family: "textFont", sans-serif;
 }
+
 @media (min-width: 1000px) {
   .content .card {
     max-width: 45%;
   }
 }
+
 @media (max-width: 769px) {
   .content > p {
     font-size: 1.85rem;
     padding-top: 0;
     max-width: 75%;
   }
+
   .content h1 {
     font-size: 2.85rem;
     max-width: 75%;
   }
+
   .content .card {
     max-width: 75%;
     font-size: 0.9rem;
   }
 }
+
 @media (max-width: 550px) {
   .content > p {
     font-size: 1.7rem;
     max-width: 80%;
     padding-top: 0;
   }
+
   .content h1 {
     font-size: 2.7rem;
     max-width: 80%;
   }
+
   .content .card {
     max-width: 80%;
     font-size: 0.8rem;
   }
 }
+
 @media (max-width: 520px) {
   .content > * {
-    -webkit-margin-start: 2%;
-            margin-inline-start: 2%;
+    margin-inline-start: 2%;
   }
+
   .content > p {
     font-size: 1.3rem;
     max-width: 95%;
     padding-top: 0;
   }
+
   .content h1 {
     font-size: 2.3rem;
     max-width: 95%;
   }
+
   .content .card {
     max-width: 95%;
     font-size: 0.8rem;
@@ -193,6 +233,15 @@ nav .nav-link:hover {
 
 .inactive {
   display: none;
+}
+
+footer div li {
+  font-family: "textFont", sans-serif;
+}
+
+footer div li h2 {
+  margin-top: 5%;
+  font-size: 1.2rem;
 }
 
 #programs {
@@ -204,217 +253,36 @@ nav .nav-link:hover {
   margin: 0 auto;
   word-wrap: break-word;
 }
-#programs .container > div {
-  word-wrap: break-word;
-  font-family: "textFont", sans-serif;
-}
-#programs .container > div hr {
-  margin: 2% 0;
-}
-#programs h2 {
-  color: black;
-  -webkit-text-stroke: 1px white;
-}
-#programs .border {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 2px 2px 2px yellowgreen;
-  border-radius: 10px;
-  padding: 5%;
-  min-height: 350px;
-}
-@media (max-width: 575px) {
-  #programs .border {
-    min-height: auto;
-  }
-}
-#programs .border .img-fluid {
-  padding: 2%;
-  border-radius: 5px;
-}
-#programs .border h3 {
-  font-family: "textFont", sans-serif;
-  font-size: 1.5rem;
-}
-@media (max-width: 575px) {
-  #programs .border {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  #programs .border .img-fluid {
-    max-width: 50%;
-  }
-}
-#programs h2 {
-  font-family: "capFont", sans-serif;
-}
 
-#performers {
-  background: url("../images/back1.jpg") center;
-  background-size: cover;
-  max-width: 95%;
-  margin: 0 auto;
-}
-#performers .more {
-  min-width: 95%;
-  margin-left: 2%;
-  border: 1px solid gray;
-  color: gray;
-}
-#performers h2 {
-  color: black;
-  -webkit-text-stroke: 1px white;
-}
-#performers .perf_item {
-  border: 1px solid white;
-  box-shadow: 5px 5px 5px 5px black;
-  background: white;
-  color: black;
-  border-radius: 10px;
-}
-#performers .item {
-  word-wrap: break-word;
-}
-#performers .card-title {
-  font-family: "textFont", sans-serif;
-}
-
-#sponsors {
-  font-family: "headerFont", sans-serif;
-  padding: 2%;
-}
-#sponsors h2 {
-  font-size: 2rem;
+#programs a {
+  display: block;
+  margin-top: 5%;
+  color: white;
+  text-align: center;
   text-transform: uppercase;
 }
-#sponsors ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-}
-#sponsors ul .thumbnail {
-  height: 100px;
-  width: 100px;
-}
-#sponsors ul .thumbnail .img-fluid {
-  border-radius: 10%;
-}
-#sponsors h2 {
-  color: gray;
-}
 
-#main h1 {
-  font-family: "headerFont", sans-serif;
-  font-size: 4rem;
-  max-width: 50%;
-  margin: auto;
-  color: orangered;
-}
-@media (max-width: 769px) {
-  #main h1 {
-    font-size: 3rem;
-    max-width: 100%;
-  }
-}
-#main p {
-  font-family: "capFont", sans-serif;
-  font-size: 1rem;
-  color: gray;
-}
-#main h2 {
-  font-family: "textFont", sans-serif;
-  font-size: 1rem;
-  color: black;
-}
-#main .card {
-  max-width: 70%;
-  margin: 0 auto;
-  box-shadow: 1px 1px 1px black;
-}
-#main .card > * {
-  margin: 0;
-}
-@media (max-width: 768px) {
-  #main .card {
-    max-width: 95%;
-  }
-  #main .card p:nth-child(3) {
+@media (max-width: 575px) {
+  #programs a {
     display: none;
   }
 }
 
-#logo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: white;
-}
-#logo p {
-  font-family: "textFont", sans-serif;
-  font-size: 0.8rem;
+#programs button {
+  display: none;
 }
 
-#concerts .row {
-  max-width: 70%;
-  margin: 0 auto;
-}
-#concerts .row .col-md-6:nth-child(1) .layer {
-  background: url("../images/first_concert.webp") no-repeat center;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
-  color: white;
-  min-height: 240px;
-}
-#concerts .row .col-md-6:nth-child(2) .layer {
-  background: url("../images/eminem_newzealand.jpg") no-repeat center;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
-  color: white;
-  min-height: 240px;
-}
-#concerts .row .col-md-6:nth-child(3) .layer {
-  background: url("../images/dimash_NY.jpg") no-repeat center;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
-  color: white;
-  min-height: 240px;
-}
-#concerts .row .col-md-6:nth-child(4) .layer {
-  background: url("../images/BTS_LA.jpg") no-repeat center;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
-  color: white;
-  min-height: 240px;
-}
-
-#sponsor-list {
-  font-family: "headerFont", sans-serif;
-  padding: 2%;
-}
-#sponsor-list h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-#sponsor-list ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-}
-#sponsor-list ul .thumbnail {
-  height: 100px;
-  width: 100px;
-}
-#sponsor-list ul .thumbnail .img-fluid {
-  border-radius: 10%;
-}
-#sponsor-list h2 {
-  color: gray;
-}
-@media (min-width: 768px) {
-  #sponsor-list {
-    display: none;
+@media (max-width: 575px) {
+  #programs button {
+    display: flex;
+    padding: 10%;
+    font-family: "capFont", sans-serif;
+    font-size: 1rem;
+    background-color: #ec5242;
+    color: black;
+    margin: 5% auto;
+    max-width: 80%;
+    border-radius: 10px;
   }
 }
 
@@ -426,23 +294,323 @@ footer div {
   align-items: center;
   padding: 2%;
 }
-footer div li {
+
+#programs .container > div {
+  word-wrap: break-word;
   font-family: "capFont", sans-serif;
 }
-footer div li h2 {
-  margin-top: 5%;
+
+#programs h2 {
+  font-family: "inHead", sans-serif;
+  color: #272a31;
+  -webkit-text-stroke: 1px white;
+}
+
+#programs .border {
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 2px yellowgreen;
+  border-radius: 10px;
+  padding: 5%;
+  min-height: 300px;
+}
+
+#programs .border .img-fluid {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+#programs .border h3 {
   font-size: 1.5rem;
 }
+
+#programs .border div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  #programs .border {
+    flex-direction: row;
+    align-items: center;
+    min-height: auto;
+    gap: 6%;
+  }
+
+  #programs .border div {
+    flex-direction: row;
+    align-self: flex-end;
+    text-align: left;
+    gap: 8%;
+  }
+
+  #programs .border .img-fluid {
+    max-height: 75px;
+    max-width: 75px;
+  }
+
+  #programs .border h3 {
+    font-size: 1.2rem;
+  }
+
+  #programs .border p {
+    font-size: 0.8rem;
+  }
+}
+
+#performers {
+  background: url("../images/back1.jpg") center;
+  background-size: cover;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+#performers .more {
+  min-width: 95%;
+  margin-left: 2%;
+  border: 1px solid #d3d3d3;
+  color: #d3d3d3;
+}
+
+#performers h2 {
+  font-family: "inHead", sans-serif;
+  color: #272a31;
+  -webkit-text-stroke: 1px white;
+}
+
+#performers .perf_item {
+  border: 1px solid white;
+  box-shadow: 5px 5px 5px 5px black;
+  background: white;
+  color: #272a31;
+  border-radius: 10px;
+}
+
+#main p {
+  font-family: "capFont", sans-serif;
+  font-size: 1rem;
+  color: gray;
+}
+
+#logo p {
+  font-family: "textFont", sans-serif;
+  font-size: 0.8rem;
+}
+
+#performers .perf_item p {
+  font-family: "capFont", sans-serif;
+  font-size: 0.7rem;
+  color: gray;
+}
+
+@media (min-width: 768px) {
+  #performers .perf_item img:hover {
+    transform: scale(1.6);
+  }
+}
+
+#performers .item {
+  word-wrap: break-word;
+}
+
+#performers .card-title {
+  font-family: "textFont", sans-serif;
+}
+
+#sponsors {
+  font-family: "inHead", sans-serif;
+  padding: 2%;
+}
+
+#sponsors h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #d3d3d3;
+}
+
+#sponsors ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+#sponsors ul .thumbnail {
+  height: 100px;
+  width: 100px;
+}
+
+#sponsors ul .thumbnail .img-fluid {
+  border-radius: 10%;
+}
+
+#main {
+  background: url("../images/about_back.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#main h1 {
+  font-family: "headerFont", sans-serif;
+  font-size: 4rem;
+  max-width: 50%;
+  margin: auto;
+  color: #ec5242;
+}
+
+@media (max-width: 769px) {
+  #main h1 {
+    font-size: 2.8rem;
+    max-width: 95%;
+    margin: 0;
+  }
+}
+
+#main h2 {
+  font-family: "inHead", sans-serif;
+  font-size: 1rem;
+  color: #272a31;
+}
+
+#main .card {
+  max-width: 70%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px black;
+  font-family: "textFont", sans-serif;
+}
+
+#main .card > * {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #main .card {
+    max-width: 95%;
+  }
+
+  #main .card p:nth-child(3) {
+    display: none;
+  }
+}
+
+#logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: white;
+}
+
+#logo h2 {
+  font-family: "inHead", sans-serif;
+}
+
+#logo hr.red {
+  min-width: 15%;
+}
+
+#concerts h2 {
+  font-family: "inHead", sans-serif;
+}
+
+#concerts hr.red {
+  min-width: 20%;
+}
+
+#concerts .row {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+#sponsor-list h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #d3d3d3;
+}
+
+#concerts .row .col-md-6:nth-child(1) .layer {
+  background: url("../images/first_concert.webp") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+
+#concerts .row .col-md-6:nth-child(1) .layer h2 {
+  font-family: "capFont", sans-serif;
+}
+
+#concerts .row .col-md-6:nth-child(2) .layer {
+  background: url("../images/eminem_newzealand.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+
+#concerts .row .col-md-6:nth-child(2) .layer h2 {
+  font-family: "capFont", sans-serif;
+}
+
+#concerts .row .col-md-6:nth-child(3) .layer {
+  background: url("../images/dimash_NY.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+
+#concerts .row .col-md-6:nth-child(3) .layer h2 {
+  font-family: "capFont", sans-serif;
+}
+
+#concerts .row .col-md-6:nth-child(4) .layer {
+  background: url("../images/BTS_LA.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+
+#concerts .row .col-md-6:nth-child(4) .layer h2 {
+  font-family: "capFont", sans-serif;
+}
+
+#sponsor-list {
+  font-family: "inHead", sans-serif;
+  padding: 2%;
+}
+
+#sponsor-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+#sponsor-list ul .thumbnail {
+  height: 100px;
+  width: 100px;
+}
+
+#sponsor-list ul .thumbnail .img-fluid {
+  border-radius: 10%;
+}
+
+@media (min-width: 768px) {
+  #sponsor-list {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   footer div li h2 {
     margin-top: 0;
     font-size: 1rem;
   }
 }
-footer div li p {
-  font-family: "textFont", sans-serif;
-  color: gray;
-}
+
 @media (max-width: 768px) {
   footer div li p {
     display: none;
@@ -464,11 +632,11 @@ footer div li p {
     justify-content: end;
     width: 100%;
     padding-bottom: 1px;
-    -webkit-padding-end: 12%;
-            padding-inline-end: 12%;
+    padding-inline-end: 12%;
     height: 5vh;
     background: linear-gradient(to right, black, gray);
   }
+
   .top ul {
     display: flex;
     justify-content: end;
@@ -476,8 +644,9 @@ footer div li p {
     gap: 3%;
     list-style: none;
   }
+
   .top ul a {
     text-decoration: none;
-    color: black;
+    color: #272a31;
   }
-}/*# sourceMappingURL=style.css.map */
+}

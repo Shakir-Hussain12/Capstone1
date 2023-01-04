@@ -5,32 +5,32 @@ const foot = document.querySelector('footer');
 
 const programs = [
   {
-    icon: './assets/images/prog1.jpg',
+    icon: './assets/images/workshop.png',
     head: 'Rehearsals',
-    info: 'Get a chance to see the hardwork behind each masterpiece with access to live rehearsals of each band/ performer.',
+    info: 'Get a chance to see the hardwork behind each masterpiece with access to live rehearsals.',
   },
   {
-    icon: './assets/images/prog2.jpeg',
+    icon: './assets/images/opera.png',
     head: 'Opera',
     info: 'Get in touch with the purest form of music with the best opera singers from all around the world.',
   },
   {
-    icon: './assets/images/prog4.jpg',
+    icon: './assets/images/live-music.png',
     head: 'Jazz',
     info: 'Get a chance to witness your favorite/ best Jazz groups perform live.',
   },
   {
-    icon: './assets/images/prog3.jpg',
+    icon: './assets/images/pop.png',
     head: 'Pop',
     info: "Enjoy back-to-back performances from the world's top Pop artists.",
   },
   {
-    icon: './assets/images/forum.jpg',
+    icon: './assets/images/pop-up.png',
     head: 'Forum',
     info: 'Get in touch with other music lovers, and share your experiences.',
   },
   {
-    icon: './assets/images/prog5.jpeg',
+    icon: './assets/images/communities.png',
     head: 'Community',
     info: 'Join the Upsouly community for latest updates on concerts all over the world.',
   },
@@ -52,11 +52,11 @@ const performers = [
     link: 'https://en.wikipedia.org/wiki/Dimash_Kudaibergen',
   },
   {
-    name: 'BTS',
-    pic: './assets/images/BTS.jpg',
-    achievements: 'K-Pop Group / Singers/ Dancers',
-    info: 'South Korean boy band formed in 2010. The band consists of Jin, Suga, J-Hope, RM, Jimin, V, and Jungkook, who co-write and co-produce the majority of their material.',
-    link: 'https://en.wikipedia.org/wiki/BTS',
+    name: 'Beyonce',
+    pic: './assets/images/beyonce.webp',
+    achievements: 'Singer / Songwriter / Actress',
+    info: "Beyoncé's boundary-pushing artistry and vocals have made her the most influential female musician of the 21st century, according to NPR. Her success has led to her becoming a cultural icon and earning her the nickname 'Queen Bey'.",
+    link: 'https://en.wikipedia.org/wiki/Beyonc%C3%A9',
   },
   {
     name: 'Andrea Bocelli',
@@ -66,11 +66,11 @@ const performers = [
     link: 'https://en.wikipedia.org/wiki/Andrea_Bocelli',
   },
   {
-    name: 'Beyonce',
-    pic: './assets/images/beyonce.webp',
-    achievements: 'Singer / Songwriter / Actress',
-    info: "Beyoncé's boundary-pushing artistry and vocals have made her the most influential female musician of the 21st century, according to NPR. Her success has led to her becoming a cultural icon and earning her the nickname 'Queen Bey'.",
-    link: 'https://en.wikipedia.org/wiki/Beyonc%C3%A9',
+    name: 'BTS',
+    pic: './assets/images/BTS.jpg',
+    achievements: 'K-Pop Group / Singers/ Dancers',
+    info: 'South Korean boy band formed in 2010. The band consists of Jin, Suga, J-Hope, RM, Jimin, V, and Jungkook, who co-write and co-produce the majority of their material.',
+    link: 'https://en.wikipedia.org/wiki/BTS',
   },
   {
     name: 'Drake',
@@ -206,13 +206,14 @@ const mobile = () => {
   const btn = parent1.appendChild(createElem('button', 'btn'));
   btn.classList.add('more');
   btn.classList.add('p-2');
-  btn.innerText = 'More';
+  btn.innerText = 'Show More';
   let sp = btn.appendChild(createElem('span'));
   let thumb = sp.appendChild(createElem('img'));
   thumb.src = './assets/images/Disabled.png';
+  thumb.alt = 'Arrow';
   btn.addEventListener('click', () => {
     mobileAdd(drow, performers.length / 2, performers.length);
-    btn.innerText = 'Less';
+    btn.innerText = 'Show Less';
     spons.classList.remove('inactive');
     foot.classList.remove('inactive');
     sp = btn.appendChild(createElem('span'));
@@ -255,8 +256,7 @@ h2.innerText = 'Programs & Events';
 con.appendChild(createElem('hr', 'red'));
 const drow = con.appendChild(createElem('div', 'row'));
 drow.classList.add('justify-content-center');
-drow.classList.add('gx-2');
-drow.classList.add('gy-2');
+drow.classList.add('g-2');
 programs.map((program) => {
   const {
     icon,
@@ -270,16 +270,17 @@ programs.map((program) => {
   const img = ins.appendChild(createElem('img', 'img-fluid'));
   img.src = icon;
   img.alt = 'N/A';
-  const right = ins.appendChild(createElem('div', 'd-flex'));
-  right.classList.add('flex-column');
-  right.classList.add('text-center');
+  const right = ins.appendChild(createElem('div'));
   const h3 = right.appendChild(createElem('h3'));
   h3.innerText = head;
-  right.appendChild(createElem('hr', 'w-75'));
   const p = right.appendChild(createElem('p'));
   p.innerText = info;
 });
-
+const anc = con.appendChild(createElem('a', 'prog_end'));
+anc.href = '/';
+anc.innerText = 'see the whole program';
+const lastBtn = con.appendChild(createElem('button', 'last_btn'));
+lastBtn.innerText = 'Join Upsouly Community';
 const btn = document.querySelector('.navbar-toggler');
 const li = document.querySelectorAll('.navbar-nav a');
 const menu = document.querySelector('.navbar-collapse');
