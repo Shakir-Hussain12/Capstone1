@@ -14,8 +14,43 @@
   --image: url("../images/top_back.png");
 }
 
+.light {
+  background: white;
+  color: black;
+}
+.light .my-img {
+  content: url("../images/top_logo.png");
+}
+@media (max-width: 768px) {
+  .light {
+    background: black;
+    color: white;
+  }
+  .light .my-img {
+    content: url("../images/inside_logo.png");
+  }
+}
+
+.dark {
+  background: rgb(43, 40, 40);
+  color: white;
+}
+.dark .my-img {
+  content: url("../images/inside_logo.png");
+}
+@media (max-width: 768px) {
+  .dark {
+    background: white;
+    color: black;
+  }
+  .dark .my-img {
+    content: url("../images/top_logo.png");
+  }
+}
+
 body {
   box-sizing: border-box;
+  overflow-x: hidden;
   background: linear-gradient(to bottom, black, white, black);
 }
 body h2 {
@@ -37,6 +72,12 @@ body hr.inside {
   max-width: 40%;
   border-top: 2px solid;
 }
+body #imp {
+  text-align: center;
+  border: 3px solid orangered;
+  border-radius: 5px;
+  padding: 0;
+}
 
 .top {
   display: none;
@@ -48,9 +89,12 @@ nav {
 nav .container-fluid {
   padding: 0 7%;
 }
+nav .navbar-nav {
+  min-width: 75%;
+  justify-content: space-between;
+}
 nav .nav-link:hover {
-  color: black;
-  border: 2px solid orangered;
+  color: orangered;
   border-radius: 5px;
 }
 
@@ -81,8 +125,8 @@ nav .nav-link:hover {
   background-position: top;
   font-style: italic;
   font-size: 3.5rem;
-  max-width: 70%;
-  -webkit-text-stroke: 1px black;
+  max-width: 60%;
+  -webkit-text-stroke: 1px darkgrey;
 }
 .content .card {
   background: transparent;
@@ -147,6 +191,10 @@ nav .nav-link:hover {
   }
 }
 
+.inactive {
+  display: none;
+}
+
 #programs {
   background: url("../images/back2.jpg");
   background-size: cover;
@@ -209,6 +257,12 @@ nav .nav-link:hover {
   max-width: 95%;
   margin: 0 auto;
 }
+#performers .more {
+  min-width: 95%;
+  margin-left: 2%;
+  border: 1px solid gray;
+  color: gray;
+}
 #performers h2 {
   color: black;
   -webkit-text-stroke: 1px white;
@@ -228,7 +282,6 @@ nav .nav-link:hover {
 }
 
 #sponsors {
-  background: linear-gradient(to left, rgb(142, 224, 245), white);
   font-family: "headerFont", sans-serif;
   padding: 2%;
 }
@@ -248,41 +301,157 @@ nav .nav-link:hover {
 #sponsors ul .thumbnail .img-fluid {
   border-radius: 10%;
 }
-
-footer {
-  background: linear-gradient(to right, rgb(142, 224, 245), white);
+#sponsors h2 {
+  color: gray;
 }
+
+#main h1 {
+  font-family: "headerFont", sans-serif;
+  font-size: 4rem;
+  max-width: 50%;
+  margin: auto;
+  color: orangered;
+}
+@media (max-width: 769px) {
+  #main h1 {
+    font-size: 3rem;
+    max-width: 100%;
+  }
+}
+#main p {
+  font-family: "capFont", sans-serif;
+  font-size: 1rem;
+  color: gray;
+}
+#main h2 {
+  font-family: "textFont", sans-serif;
+  font-size: 1rem;
+  color: black;
+}
+#main .card {
+  max-width: 70%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px black;
+}
+#main .card > * {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  #main .card {
+    max-width: 95%;
+  }
+  #main .card p:nth-child(3) {
+    display: none;
+  }
+}
+
+#logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: white;
+}
+#logo p {
+  font-family: "textFont", sans-serif;
+  font-size: 0.8rem;
+}
+
+#concerts .row {
+  max-width: 70%;
+  margin: 0 auto;
+}
+#concerts .row .col-md-6:nth-child(1) .layer {
+  background: url("../images/first_concert.webp") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+#concerts .row .col-md-6:nth-child(2) .layer {
+  background: url("../images/eminem_newzealand.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+#concerts .row .col-md-6:nth-child(3) .layer {
+  background: url("../images/dimash_NY.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+#concerts .row .col-md-6:nth-child(4) .layer {
+  background: url("../images/BTS_LA.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+  color: white;
+  min-height: 240px;
+}
+
+#sponsor-list {
+  font-family: "headerFont", sans-serif;
+  padding: 2%;
+}
+#sponsor-list h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+#sponsor-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+#sponsor-list ul .thumbnail {
+  height: 100px;
+  width: 100px;
+}
+#sponsor-list ul .thumbnail .img-fluid {
+  border-radius: 10%;
+}
+#sponsor-list h2 {
+  color: gray;
+}
+@media (min-width: 768px) {
+  #sponsor-list {
+    display: none;
+  }
+}
+
 footer div {
   max-width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
+  padding: 2%;
 }
 footer div li {
   font-family: "capFont", sans-serif;
 }
 footer div li h2 {
+  margin-top: 5%;
   font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  footer div li h2 {
+    margin-top: 0;
+    font-size: 1rem;
+  }
 }
 footer div li p {
   font-family: "textFont", sans-serif;
   color: gray;
 }
-@media (max-width: 500px) {
-  footer div {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  footer div ul {
-    -webkit-padding-start: 0;
-            padding-inline-start: 0;
+@media (max-width: 768px) {
+  footer div li p {
+    display: none;
   }
 }
 
 .active .navbar-toggler-icon {
   background-image: url("../images/Enabled-close.png");
-  background-size: contain;
+  background-size: 180%;
 }
 
 .show {

@@ -1,4 +1,7 @@
-let parent = document.querySelector('#performers');
+let wSize = window.innerWidth;
+const parent1 = document.querySelector('#performers');
+const spons = document.querySelector('#sponsors');
+const foot = document.querySelector('footer');
 
 const programs = [
   {
@@ -87,61 +90,171 @@ const createElem = (eName, cName) => {
 };
 
 // adding performers dyncamically
-let con = parent.appendChild(createElem('div', 'container'));
-let h2 = con.appendChild(createElem('h2', 'text-center'));
-h2.classList.add('py-2');
-h2.innerText = 'Top Performers';
-con.appendChild(createElem('hr', 'red'));
-let drow = con.appendChild(createElem('div', 'row'));
-drow.classList.add('gx-3');
-drow.classList.add('pt-1');
-drow.classList.add('pb-5');
-performers.map((singer) => {
-  const {
-    name,
-    pic,
-    achievements,
-    info,
-    link,
-  } = singer;
-  const dcol = drow.appendChild(createElem('div', 'col-md-6'));
-  dcol.classList.add('p-3');
-  const inDiv = dcol.appendChild(createElem('div', 'card'));
-  inDiv.classList.add('mb-3');
-  inDiv.classList.add('perf_item');
-  const cd = inDiv.appendChild(createElem('div', 'row'));
-  cd.classList.add('g-0');
-  const left = cd.appendChild(createElem('div', 'col-sm-4'));
-  left.classList.add('p-3');
-  const img = left.appendChild(createElem('img', 'img-fluid'));
-  img.classList.add('rounded-start');
-  img.src = pic;
-  img.alt = name;
-  const right = cd.appendChild(createElem('div', 'col-sm-8'));
-  right.classList.add('item');
-  const cBody = right.appendChild(createElem('div', 'card-body'));
-  const h4 = cBody.appendChild(createElem('h3', 'card-title'));
-  h4.innerText = name;
-  let p = cBody.appendChild(createElem('p', 'card-text'));
-  p.classList.add('text-danger');
-  p.innerText = achievements;
-  cBody.appendChild(createElem('hr', 'inside'));
-  p = cBody.appendChild(createElem('p', 'card-text'));
-  p.innerText = info;
-  const anchor = cBody.appendChild(createElem('a'));
-  anchor.href = link;
-  anchor.innerText = 'Wikipedia Link';
-});
+
+const desktop = () => {
+  spons.classList.remove('inactive');
+  foot.classList.remove('inactive');
+  if (parent1.hasChildNodes()) {
+    parent1.innerHTML = '';
+  }
+
+  const con = parent1.appendChild(createElem('div', 'container'));
+  const h2 = con.appendChild(createElem('h2', 'text-center'));
+  h2.classList.add('py-2');
+  h2.innerText = 'Top Performers';
+  con.appendChild(createElem('hr', 'red'));
+  const drow = con.appendChild(createElem('div', 'row'));
+  drow.classList.add('gx-3');
+  drow.classList.add('pt-1');
+  drow.classList.add('pb-5');
+  performers.map((singer) => {
+    const {
+      name,
+      pic,
+      achievements,
+      info,
+      link,
+    } = singer;
+    const dcol = drow.appendChild(createElem('div', 'col-md-6'));
+    dcol.classList.add('p-3');
+    const inDiv = dcol.appendChild(createElem('div', 'card'));
+    inDiv.classList.add('mb-3');
+    inDiv.classList.add('perf_item');
+    const cd = inDiv.appendChild(createElem('div', 'row'));
+    cd.classList.add('g-0');
+    const left = cd.appendChild(createElem('div', 'col-sm-4'));
+    left.classList.add('p-3');
+    const img = left.appendChild(createElem('img', 'img-fluid'));
+    img.classList.add('rounded-start');
+    img.src = pic;
+    img.alt = name;
+    const right = cd.appendChild(createElem('div', 'col-sm-8'));
+    right.classList.add('item');
+    const cBody = right.appendChild(createElem('div', 'card-body'));
+    const h4 = cBody.appendChild(createElem('h3', 'card-title'));
+    h4.innerText = name;
+    let p = cBody.appendChild(createElem('p', 'card-text'));
+    p.classList.add('text-danger');
+    p.innerText = achievements;
+    cBody.appendChild(createElem('hr', 'inside'));
+    p = cBody.appendChild(createElem('p', 'card-text'));
+    p.innerText = info;
+    const anchor = cBody.appendChild(createElem('a'));
+    anchor.href = link;
+    anchor.innerText = 'Wikipedia Link';
+  });
+};
+
+const mobileAdd = (drow, start, end) => {
+  for (let i = start; i < end; i += 1) {
+    const {
+      name,
+      pic,
+      achievements,
+      info,
+      link,
+    } = performers[i];
+    const dcol = drow.appendChild(createElem('div', 'col-md-6'));
+    dcol.classList.add('p-3');
+    const inDiv = dcol.appendChild(createElem('div', 'card'));
+    inDiv.classList.add('mb-3');
+    inDiv.classList.add('perf_item');
+    const cd = inDiv.appendChild(createElem('div', 'row'));
+    cd.classList.add('g-0');
+    const left = cd.appendChild(createElem('div', 'col-sm-4'));
+    left.classList.add('p-3');
+    const img = left.appendChild(createElem('img', 'img-fluid'));
+    img.classList.add('rounded-start');
+    img.src = pic;
+    img.alt = name;
+    const right = cd.appendChild(createElem('div', 'col-sm-8'));
+    right.classList.add('item');
+    const cBody = right.appendChild(createElem('div', 'card-body'));
+    const h4 = cBody.appendChild(createElem('h3', 'card-title'));
+    h4.innerText = name;
+    let p = cBody.appendChild(createElem('p', 'card-text'));
+    p.classList.add('text-danger');
+    p.innerText = achievements;
+    cBody.appendChild(createElem('hr', 'inside'));
+    p = cBody.appendChild(createElem('p', 'card-text'));
+    p.innerText = info;
+    const anchor = cBody.appendChild(createElem('a'));
+    anchor.href = link;
+    anchor.innerText = 'Wikipedia Link';
+  }
+};
+
+const mobile = () => {
+  if (parent1.hasChildNodes()) {
+    parent1.innerHTML = '';
+  }
+
+  spons.classList.add('inactive');
+  foot.classList.add('inactive');
+  const con = parent1.appendChild(createElem('div', 'container'));
+  const h2 = con.appendChild(createElem('h2', 'text-center'));
+  h2.classList.add('py-2');
+  h2.innerText = 'Top Performers';
+  con.appendChild(createElem('hr', 'red'));
+  const drow = con.appendChild(createElem('div', 'row'));
+  drow.classList.add('gx-3');
+  drow.classList.add('pt-1');
+  drow.classList.add('pb-5');
+
+  mobileAdd(drow, 0, performers.length / 2);
+
+  const btn = parent1.appendChild(createElem('button', 'btn'));
+  btn.classList.add('more');
+  btn.classList.add('p-2');
+  btn.innerText = 'More';
+  let sp = btn.appendChild(createElem('span'));
+  let thumb = sp.appendChild(createElem('img'));
+  thumb.src = './assets/images/Disabled.png';
+  btn.addEventListener('click', () => {
+    mobileAdd(drow, performers.length / 2, performers.length);
+    btn.innerText = 'Less';
+    spons.classList.remove('inactive');
+    foot.classList.remove('inactive');
+    sp = btn.appendChild(createElem('span'));
+    thumb = sp.appendChild(createElem('img'));
+    thumb.src = './assets/images/Disabled.png';
+    thumb.style.transform = 'rotate(180deg)';
+    btn.addEventListener('click', () => {
+      mobile();
+    });
+  });
+};
+
+if (wSize < 768) {
+  mobile();
+} else {
+  desktop();
+}
+
+let check = false;
+window.onresize = () => {
+  wSize = window.innerWidth;
+  if (wSize < 768 && !check) {
+    check = true;
+    mobile();
+  } else if (wSize >= 768 && check) {
+    check = false;
+    desktop();
+  } else {
+    console.log('skip');
+  }
+};
 
 // adding programs dynamically
-parent = document.querySelector('#programs');
-con = parent.appendChild(createElem('div', 'container'));
+const parent = document.querySelector('#programs');
+const con = parent.appendChild(createElem('div', 'container'));
 con.classList.add('pb-5');
 con.classList.add('pt-3');
-h2 = con.appendChild(createElem('h2', 'text-center'));
+const h2 = con.appendChild(createElem('h2', 'text-center'));
 h2.innerText = 'Programs & Events';
 con.appendChild(createElem('hr', 'red'));
-drow = con.appendChild(createElem('div', 'row'));
+const drow = con.appendChild(createElem('div', 'row'));
+drow.classList.add('justify-content-center');
 drow.classList.add('gx-2');
 drow.classList.add('gy-2');
 programs.map((program) => {
@@ -151,7 +264,7 @@ programs.map((program) => {
     info,
   } = program;
   const dcol = drow.appendChild(createElem('div', 'col-lg-2'));
-  dcol.classList.add('col-md-3')
+  dcol.classList.add('col-md-3');
   dcol.classList.add('col-sm-4');
   const ins = dcol.appendChild(createElem('div', 'border'));
   const img = ins.appendChild(createElem('img', 'img-fluid'));
@@ -159,9 +272,10 @@ programs.map((program) => {
   img.alt = 'N/A';
   const right = ins.appendChild(createElem('div', 'd-flex'));
   right.classList.add('flex-column');
+  right.classList.add('text-center');
   const h3 = right.appendChild(createElem('h3'));
   h3.innerText = head;
-  right.appendChild(createElem('hr','w-75'));
+  right.appendChild(createElem('hr', 'w-75'));
   const p = right.appendChild(createElem('p'));
   p.innerText = info;
 });
