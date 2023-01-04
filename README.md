@@ -107,7 +107,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://shakir-hussain12.github.io/Capstone1)
+- [Live Demo Link](https://shakir-hussain12.github.io/Capstone1/)
 
 ## Loom Video <a name="loom"></a>
 - [Video Link](https://www.loom.com/share/ffec14632ae74fd98b5b1fe26e8fbd1a)
