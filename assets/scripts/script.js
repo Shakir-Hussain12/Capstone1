@@ -53,7 +53,7 @@ const performers = [
   },
   {
     name: 'Beyonce',
-    pic: './assets/images/beyonce.webp',
+    pic: './assets/images/Beyonce.webp',
     achievements: 'Singer / Songwriter / Actress',
     info: "Beyoncé's boundary-pushing artistry and vocals have made her the most influential female musician of the 21st century, according to NPR. Her success has led to her becoming a cultural icon and earning her the nickname 'Queen Bey'.",
     link: 'https://en.wikipedia.org/wiki/Beyonc%C3%A9',
