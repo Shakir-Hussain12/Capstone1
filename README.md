@@ -89,7 +89,7 @@ After you're finished please remove all the comments and instructions!
 - [Live Demo Link](https://shakir-hussain12.github.io/Capstone1)
 
 ## Loom Video <a name="loom"></a>
-- [Video Link](https://www.loom.com/share/ffec14632ae74fd98b5b1fe26e8fbd1a)
+- [Video Link](https://www.loom.com/share/8706018a2539463e994174aaf2f63618)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -110,7 +110,7 @@ In order to run this project you need:
 
 > Clone this repository to your desired folder:
 
-> git clone git@github.com:Shakir-Hussain12/Capstone1.git
+git clone git@github.com:Shakir-Hussain12/Capstone1.git
 
 <!-- AUTHORS -->
 
@@ -157,7 +157,7 @@ If you like this project, you are welcomed to star and fork it. You can also sha
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Cindy Shen for her original design of **Creative Commons Global Summit 2015**, as it served as an inspiration for this project.
+I would like to thank Cindy Shin for her original design of **Creative Commons Global Summit 2015**, as it served as an inspiration for this project.
 - [Original Design](https://www.behance.net/gallery/29845175/CC-Global-Summit-2015)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -167,7 +167,4 @@ I would like to thank Cindy Shen for her original design of **Creative Commons G
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE.md) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
