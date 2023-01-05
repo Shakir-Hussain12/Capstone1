@@ -31,17 +31,6 @@
   content: url("../images/top_logo.png");
 }
 
-@media (max-width: 768px) {
-  .light {
-    background: #272a31;
-    color: white;
-  }
-
-  .light .my-img {
-    content: url("../images/inside_logo.png");
-  }
-}
-
 .dark {
   background: #272a31;
   color: white;
@@ -105,10 +94,6 @@ body #imp {
 
 .top {
   display: none;
-}
-
-nav {
-  background: linear-gradient(to right, lightyellow, white);
 }
 
 nav .container-fluid {
@@ -634,7 +619,6 @@ footer div {
     padding-bottom: 1px;
     padding-inline-end: 12%;
     height: 5vh;
-    background: linear-gradient(to right, black, gray);
   }
 
   .top ul {
@@ -647,6 +631,6 @@ footer div {
 
   .top ul a {
     text-decoration: none;
-    color: #272a31;
+    color: white;
   }
 }
