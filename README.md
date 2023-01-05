@@ -117,9 +117,7 @@ git clone git@github.com:Shakir-Hussain12/Capstone1.git
 
 ## 👥 Authors <a name="authors"></a>
 
-> Shakir Hussain
-
-👤 **Author1**
+👤 **Shakir Hussain**
 
 - GitHub: [@Shakir-Hussain12](https://github.com/Shakir-Hussain12)
 - Twitter: [@S_Hussain_99](https://twitter.com/S_Hussain_99)
