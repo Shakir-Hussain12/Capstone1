@@ -90,6 +90,7 @@ After you're finished please remove all the comments and instructions!
 
 ## Loom Video <a name="loom"></a>
 - [Video Link](https://www.loom.com/share/8706018a2539463e994174aaf2f63618)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
