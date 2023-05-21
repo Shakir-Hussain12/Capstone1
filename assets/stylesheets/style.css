@@ -40,17 +40,6 @@
   content: url("../images/inside_logo.png");
 }
 
-@media (max-width: 768px) {
-  .dark {
-    background: white;
-    color: #272a31;
-  }
-
-  .dark .my-img {
-    content: url("../images/top_logo.png");
-  }
-}
-
 body {
   box-sizing: border-box;
   overflow-x: hidden;
@@ -152,68 +141,8 @@ footer div li p {
   font-family: "textFont", sans-serif;
 }
 
-@media (min-width: 1000px) {
-  .content .card {
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 769px) {
-  .content > p {
-    font-size: 1.85rem;
-    padding-top: 0;
-    max-width: 75%;
-  }
-
-  .content h1 {
-    font-size: 2.85rem;
-    max-width: 75%;
-  }
-
-  .content .card {
-    max-width: 75%;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 550px) {
-  .content > p {
-    font-size: 1.7rem;
-    max-width: 80%;
-    padding-top: 0;
-  }
-
-  .content h1 {
-    font-size: 2.7rem;
-    max-width: 80%;
-  }
-
-  .content .card {
-    max-width: 80%;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .content > * {
-    margin-inline-start: 2%;
-  }
-
-  .content > p {
-    font-size: 1.3rem;
-    max-width: 95%;
-    padding-top: 0;
-  }
-
-  .content h1 {
-    font-size: 2.3rem;
-    max-width: 95%;
-  }
-
-  .content .card {
-    max-width: 95%;
-    font-size: 0.8rem;
-  }
+#programs button {
+  display: none;
 }
 
 .inactive {
@@ -245,30 +174,6 @@ footer div li h2 {
   color: white;
   text-align: center;
   text-transform: uppercase;
-}
-
-@media (max-width: 575px) {
-  #programs a {
-    display: none;
-  }
-}
-
-#programs button {
-  display: none;
-}
-
-@media (max-width: 575px) {
-  #programs button {
-    display: flex;
-    padding: 10%;
-    font-family: "capFont", sans-serif;
-    font-size: 1rem;
-    background-color: #ec5242;
-    color: black;
-    margin: 5% auto;
-    max-width: 80%;
-    border-radius: 10px;
-  }
 }
 
 footer div {
@@ -318,35 +223,6 @@ footer div {
   text-align: center;
 }
 
-@media (max-width: 575px) {
-  #programs .border {
-    flex-direction: row;
-    align-items: center;
-    min-height: auto;
-    gap: 6%;
-  }
-
-  #programs .border div {
-    flex-direction: row;
-    align-self: flex-end;
-    text-align: left;
-    gap: 8%;
-  }
-
-  #programs .border .img-fluid {
-    max-height: 75px;
-    max-width: 75px;
-  }
-
-  #programs .border h3 {
-    font-size: 1.2rem;
-  }
-
-  #programs .border p {
-    font-size: 0.8rem;
-  }
-}
-
 #performers {
   background: url("../images/back1.jpg") center;
   background-size: cover;
@@ -390,12 +266,6 @@ footer div {
   font-family: "capFont", sans-serif;
   font-size: 0.7rem;
   color: gray;
-}
-
-@media (min-width: 768px) {
-  #performers .perf_item img:hover {
-    transform: scale(1.6);
-  }
 }
 
 #performers .item {
@@ -446,14 +316,6 @@ footer div {
   color: #ec5242;
 }
 
-@media (max-width: 769px) {
-  #main h1 {
-    font-size: 2.8rem;
-    max-width: 95%;
-    margin: 0;
-  }
-}
-
 #main h2 {
   font-family: "inHead", sans-serif;
   font-size: 1rem;
@@ -469,16 +331,6 @@ footer div {
 
 #main .card > * {
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  #main .card {
-    max-width: 95%;
-  }
-
-  #main .card p:nth-child(3) {
-    display: none;
-  }
 }
 
 #logo {
@@ -583,25 +435,6 @@ footer div {
   border-radius: 10%;
 }
 
-@media (min-width: 768px) {
-  #sponsor-list {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  footer div li h2 {
-    margin-top: 0;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  footer div li p {
-    display: none;
-  }
-}
-
 .active .navbar-toggler-icon {
   background-image: url("../images/Enabled-close.png");
   background-size: 180%;
@@ -612,6 +445,10 @@ footer div {
 }
 
 @media (min-width: 768px) {
+  #sponsor-list {
+    display: none;
+  }
+
   .top {
     display: flex;
     justify-content: end;
@@ -632,5 +469,152 @@ footer div {
   .top ul a {
     text-decoration: none;
     color: white;
+  }
+
+  #performers .perf_item img:hover {
+    transform: scale(1.6);
+  }
+}
+
+@media (max-width: 768px) {
+  footer div li h2 {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .dark {
+    background: white;
+    color: #272a31;
+  }
+
+  .dark .my-img {
+    content: url("../images/top_logo.png");
+  }
+
+  #main .card {
+    max-width: 95%;
+  }
+
+  footer div li p {
+    display: none;
+  }
+
+  #main .card p:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .content .card {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 769px) {
+  .content > p {
+    font-size: 1.85rem;
+    padding-top: 0;
+    max-width: 75%;
+  }
+
+  .content h1 {
+    font-size: 2.85rem;
+    max-width: 75%;
+  }
+
+  .content .card {
+    max-width: 75%;
+    font-size: 0.9rem;
+  }
+
+  #main h1 {
+    font-size: 2.8rem;
+    max-width: 95%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  #programs a {
+    display: none;
+  }
+
+  #programs button {
+    display: flex;
+    padding: 10%;
+    font-family: "capFont", sans-serif;
+    font-size: 1rem;
+    background-color: #ec5242;
+    color: black;
+    margin: 5% auto;
+    max-width: 80%;
+    border-radius: 10px;
+  }
+
+  #programs .border {
+    flex-direction: row;
+    align-items: center;
+    min-height: auto;
+    gap: 6%;
+  }
+
+  #programs .border div {
+    flex-direction: row;
+    align-self: flex-end;
+    text-align: left;
+    gap: 8%;
+  }
+
+  #programs .border .img-fluid {
+    max-height: 75px;
+    max-width: 75px;
+  }
+
+  #programs .border h3 {
+    font-size: 1.2rem;
+  }
+
+  #programs .border p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .content > p {
+    font-size: 1.7rem;
+    max-width: 80%;
+    padding-top: 0;
+  }
+
+  .content h1 {
+    font-size: 2.7rem;
+    max-width: 80%;
+  }
+
+  .content .card {
+    max-width: 80%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .content > * {
+    margin-inline-start: 2%;
+  }
+
+  .content > p {
+    font-size: 1.3rem;
+    max-width: 95%;
+    padding-top: 0;
+  }
+
+  .content h1 {
+    font-size: 2.3rem;
+    max-width: 95%;
+  }
+
+  .content .card {
+    max-width: 95%;
+    font-size: 0.8rem;
   }
 }
